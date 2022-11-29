@@ -12,7 +12,7 @@ import { AuthModule } from './auth/auth.module';
       port: 5432,
       database: 'micro_auth',
       username: 'daniel',
-      password: 'pass',
+      password: null,
       entities: ['dist/**/*.entity.{ts,js}'],
       synchronize: true, // never true in production!
     }),
