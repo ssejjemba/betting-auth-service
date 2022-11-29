@@ -3,6 +3,7 @@ import { JwtModule } from '@nestjs/jwt';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthController } from './auth.controller';
 import { Auth } from './auth.entity';
+import { jwtConstants } from './constants/constants';
 import { AuthService } from './service/auth.service';
 import { JwtService } from './service/jwt.service';
 import { JwtStrategy } from './strategy/jwt.strategy';
@@ -10,8 +11,8 @@ import { JwtStrategy } from './strategy/jwt.strategy';
 @Module({
   imports: [
     JwtModule.register({
-      secret: 'dev',
-      signOptions: { expiresIn: '365d' },
+      secret: jwtConstants.secret,
+      signOptions: { expiresIn: '24h' },
     }),
     TypeOrmModule.forFeature([Auth]),
   ],
